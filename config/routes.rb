@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'review/create'
+  get 'review/edit'
+  get 'review/update'
+  get 'review/destroy'
   root to: "products#index"
 
   resources :products do
