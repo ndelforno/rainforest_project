@@ -1,2 +1,20 @@
 <h1>ProductsController#new</h1>
-<p>Find me in app/views/products_controller/new.html.erb</p>
+<%=  link_to("Back to Index", "/products") %>
+<hr>
+<!-- <p>Find me in app/views/products_controller/new.html.erb</p> -->
+
+
+<%= form_for(@product) do |f| %>
+
+
+<p>  <%= f.label :name %>
+  <%= f.text_field :name %> </p>
+
+<p>  <%= f.label :description %>
+  <%= f.text_field :description %> </p>
+
+<p>  <%= f.label :price_in_cents %>
+  <%= f.number_field :price_in_cents %> </p>
+
+<p> <%= f.submit "SAVE"%></p>
+<% end %>
