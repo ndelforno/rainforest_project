@@ -4,7 +4,8 @@
   <% @products.each do |product|%>
     <ul>
       <li>
-      <h2><%=product.name%></h2>
+      <h2><%=link_to("#{product.name}","/products/#{product.id}") %></h2>
+
       <h2><%=product.description%></h2>
       <h2><%=product.price_in_cents%></h2>
       </li>
