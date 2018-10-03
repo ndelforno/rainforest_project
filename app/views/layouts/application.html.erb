@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <%= link_to('Home','/products')%>
+        <%= link_to('Create new product',"/products/new")%>
+      </nav>
+      <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

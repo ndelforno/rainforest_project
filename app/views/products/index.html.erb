@@ -7,11 +7,9 @@
       <h2><%=link_to("#{product.name}","/products/#{product.id}") %></h2>
 
       <h2><%=product.description%></h2>
-      <h2><%=product.price_in_cents%></h2>
+      <h2><%=product.price_in_dollars%></h2>
       </li>
       <br>
     </ul>
   <%end%>
 </div>
-
-<%= link_to('Create new product',"/products/new")%>
