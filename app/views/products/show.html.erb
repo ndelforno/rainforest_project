@@ -1,0 +1,8 @@
+<h1>Product: <%= @product.name %></h1>
+<%= link_to('Back to index', '/products') %>
+<div>
+<p> Description: <%= @product.description %></p>
+<p> Price: <%= @product.price_in_cents %></p>
+</div>
+
+<%= link_to('Edit', "/products/#{@product.id}/edit") %> | <%= link_to('Delete',"/products/#{@product.id}", method: :delete) %>
