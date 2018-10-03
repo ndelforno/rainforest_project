@@ -6,3 +6,17 @@
 </div>
 
 <%= link_to('Edit', "/products/#{@product.id}/edit") %> | <%= link_to('Delete',"/products/#{@product.id}", method: :delete) %>
+
+
+<% @product.reviews.each do |review|%>
+  <ul>
+    <li>
+
+
+    <p><%=review.description%></p>
+    <p><%=review.created_at%></p>
+
+    </li>
+    <br>
+  </ul>
+<%end%>
