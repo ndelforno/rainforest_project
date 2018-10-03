@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+      <%= link_to("Delete", "/products/#{@product.id}/reviews/#{review.id}/edit", method: :delete)%>

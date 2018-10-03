@@ -18,6 +18,7 @@
     <li>
       <p><%=review.description%></p>
       <p><%=review.created_at%></p>
+      <%= link_to("delete", product_review_url(@product,review), method: :delete) %>
     </li>
     <br>
   </ul>
