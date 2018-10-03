@@ -18,3 +18,5 @@
 
 <p> <%= f.submit "SAVE"%></p>
 <% end %>
+
+<%= @product.errors.full_messages.first if @product.errors.any? %>
