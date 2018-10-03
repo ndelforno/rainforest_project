@@ -21,7 +21,10 @@
     </li>
     <br>
   </ul>
-  <h4>New Review</h4>
+
+<%end%>
+
+  <h2>New Review</h2>
 
   <%= form_for([@product, @review]) do |f| %>
     <% if @review.errors.any? %>
@@ -44,5 +47,3 @@
       <%= f.submit %>
     </div>
   <% end %>
-
-<%end%>
