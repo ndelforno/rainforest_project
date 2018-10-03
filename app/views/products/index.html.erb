@@ -1,0 +1,11 @@
+<h1>Welcome to products index page!</h1>
+
+<div>
+  <% @products.each do |product|%>
+    <ul>
+      <li><h2><%=product.name%></h2></li>
+      <li><h2><%=product.description%></h2></li>
+      <li><h2><%=product.price_in_cents%></h2></li>
+    </ul>
+  <%end%>
+</div>
