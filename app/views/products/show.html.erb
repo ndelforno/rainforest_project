@@ -1,22 +1,48 @@
 <h1>Product: <%= @product.name %></h1>
 <%= link_to('Back to index', '/products') %>
+<hr>
 <div>
 <p> Description: <%= @product.description %></p>
 <p> Price: <%= @product.price_in_cents %></p>
 </div>
 
 <%= link_to('Edit', "/products/#{@product.id}/edit") %> | <%= link_to('Delete',"/products/#{@product.id}", method: :delete) %>
+<hr>
+<hr>
 
-
-<% @product.reviews.each do |review|%>
+<h3>Reviews:<h3>
+<hr>
+<br>
+<%@product.reviews.each do |review|%>
   <ul>
     <li>
-
-
-    <p><%=review.description%></p>
-    <p><%=review.created_at%></p>
-
+      <p><%=review.description%></p>
+      <p><%=review.created_at%></p>
     </li>
     <br>
   </ul>
+  <h4>New Review</h4>
+
+  <%= form_for([@product, @review]) do |f| %>
+    <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+        <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
 <%end%>
