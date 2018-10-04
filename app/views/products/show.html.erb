@@ -1,5 +1,4 @@
 <h1>Product: <%= @product.name %></h1>
-<%= link_to('Back to index', '/products') %>
 <hr>
 <div>
 <p> Description: <%= @product.description %></p>
@@ -8,11 +7,8 @@
 
 <%= link_to('Edit', "/products/#{@product.id}/edit") %> | <%= link_to('Delete',"/products/#{@product.id}", method: :delete) %>
 <hr>
-<hr>
 
 <h3>Reviews:<h3>
-<hr>
-<br>
 <%@product.reviews.each do |review|%>
   <ul>
     <li>
